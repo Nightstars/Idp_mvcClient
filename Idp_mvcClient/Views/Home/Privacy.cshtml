@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Use this page to detail your site's privacy policy.</p>
+<br />
+@foreach (var x in ViewBag.data)
+{   
+    <h4>@x.Split(',')[0]</h4>
+    <p>@x.Split(',')[1]</p>
+}
+<br />
+<dl>
+    @foreach (var claim in User.Claims)
+	{
+		 <dt>@claim.Type</dt>
+         <dl>@claim.Value</dl>
+	}
+</dl>
